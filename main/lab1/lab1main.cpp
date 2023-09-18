@@ -1,7 +1,12 @@
 #include <iostream>
+#include "lab1.h"
+
 using namespace std;
 
 int main(){
-    cout<<"Hello, World\n";
+
+    Lab1 lab;
+    lab.start();
     return 0;
 }
+
