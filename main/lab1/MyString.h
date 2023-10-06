@@ -5,7 +5,7 @@ class MyString {
 public:
     MyString();
     MyString(const char* str); // Конструктор с параметром
-    //MyString(const MyString& other);
+    MyString(const MyString& other);
     ~MyString(); // Деструктор
     //void setData(const char* str);
     void trim(); // Метод для удаления пробелов из строки

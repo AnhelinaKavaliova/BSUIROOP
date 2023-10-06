@@ -13,12 +13,12 @@ MyString::MyString(const char* str) {
     strcpy(data, str);
 }
 
-// MyString::MyString(const MyString& other){
-//     if(other.data){
-//         data = new char[strlen(other.data)+1];
-//         strcpy(data, other.data);
-//     }else data = nullptr;
-// }
+MyString::MyString(const MyString& other){
+    if(other.data){
+        data = new char[strlen(other.data)+1];
+        strcpy(data, other.data);
+    }else data = nullptr;
+}
 
 MyString::~MyString() {
     delete[] data;
@@ -28,33 +28,33 @@ MyString::~MyString() {
 //     if(data == nullptr){
 //          data = new char[strlen(str) + 1];
 //         strcpy(data, str);
-//     }else{
-//         int choice;
-//         do{
-//             cout<<"Error. The string has already been entered" << endl;
-//             cout<<"Choose what to do: "<< endl;
-//             cout<<"1. Exit"<< endl;
-//             cout<<"2. Add this string to object's string"<<endl;
-//             cout<<"3. Replace object's string with this string"<<endl;
+//     }else{ cout<<"Error. All strings has already been entered" << endl;
+//         // int choice;
+//         // do{
+//         //     cout<<"Error. The string has already been entered" << endl;
+//         //     cout<<"Choose what to do: "<< endl;
+//         //     cout<<"1. Exit"<< endl;
+//         //     cout<<"2. Add this string to object's string"<<endl;
+//         //     cout<<"3. Replace object's string with this string"<<endl;
 
-//             cin >> choice;
+//         //     cin >> choice;
 
-//         }while(choice > 3 || choice < 1);
+//         // }while(choice > 3 || choice < 1);
 
-//         switch(choice){
-//             case 1: break;
-//             case 2: 
-//                 char* newData = new char[strlen(data)+strlen(str)+1];
-//                 strcpy(newData, data);
-//                 strcat(newData, str);
+//         // switch(choice){
+//         //     case 1: break;
+//         //     case 2: 
+//         //         char* newData = new char[strlen(data)+strlen(str)+1];
+//         //         strcpy(newData, data);
+//         //         strcat(newData, str);
 
-//                 delete[] data;
-//                 strcpy(data, newData);
-//                 break;
-//             case 3: 
-//                 delete[] data;
-//                 strcpy(data, str);
-//         }
+//         //         delete[] data;
+//         //         strcpy(data, newData);
+//         //         break;
+//         //     case 3: 
+//         //         delete[] data;
+//         //         strcpy(data, str);
+//         // }
 
 //     }
 // }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "lab1/lab1.h"
+#include "lab2/lab2.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ int main() {
         do{
             cout << "Choose the lab you want to start:" << endl;
             cout << "1. Lab 1" << endl;
-            //cout << "2." << endl;
+            cout << "2. Lab 2 " << endl;
             cout << "0. Exit" << endl;
 
             cin >> choice;
@@ -23,6 +24,12 @@ int main() {
                 {
                     Lab1 lab1;
                     lab1.start(); 
+                }
+                break;
+            case 2:
+                {
+                    Lab2 lab2;
+                    lab2.start(); 
                 }
                 break;
             case 0:

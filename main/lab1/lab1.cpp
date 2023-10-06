@@ -12,19 +12,20 @@ void Lab1::start() {
     char string[200];
     cout << "Enter the string: ";
     cin.getline(string, 200);
-    //cin.ignore();
+    cin.ignore();
 
     MyString str(string);
     int flag = 1;
-    str.printData();
+    //str.printData();
 
-    //MyString strings[10];
-    //int i = 0;
+    // MyString strings[10];
+    // int i = 0;
 
     while(flag){
         int choice;
         do{
             cout<< "Choose what you want to do: "<< endl;
+            // cout<< "0. Add new string"<<endl;
             cout << "1. Remove leading and trailing spaces from a string" << endl;
             cout << "2. Find out the length of a string" << endl;
             cout << "3. Find out if the string is empty" << endl;
@@ -40,6 +41,12 @@ void Lab1::start() {
 
         switch (choice)
         {
+        // case 0: 
+        //     cout << "Enter the string: ";
+        //     cin.getline(string, 200);
+        //     strings[i].setData(string);
+        //     i++;
+        //     break;
         case 1:
             str.trim();
             cout << "The string after: ";
