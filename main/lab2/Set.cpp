@@ -1,4 +1,5 @@
 #include<iostream>
+#include <limits>
 #include "Set.h"
 
 using namespace std;
@@ -18,7 +19,12 @@ Set :: Set(int* newSet, int newSize)
 }
 
 Set :: Set(const Set& other){
+    size = other.size;
+    set = new int[size];
 
+    for (int i = 0; i < size; ++i) {
+        set[i] = other.set[i];
+    }
 }
 
 Set :: ~Set(){
@@ -38,6 +44,10 @@ void Set :: setArr(const int* newSet, int newSize){
     } else cout << "set is fulled";
 };
 
+void Set :: setSize(int newSize){
+    size = newSize;
+}
+
 int* Set :: getMatrix() const {
     return set;
 }
@@ -46,6 +56,9 @@ int Set :: getSize(){
     return size;
 }
 
+void Set :: addElement(int element, int i){
+    set[i] = element;
+}
 
 void Set :: operator&(const Set& other){
 
@@ -130,4 +143,26 @@ void Set :: operator|(const Set& other){
     }
  
     delete[] result;
+};
+
+ ostream& operator<<(ostream& os, const Set& set){
+    if(set.set != nullptr){
+        for(int i = 0; i < set.size; i++){
+        os << set.set[i] <<" ";
+        }
+    }
+
+};
+
+istream& operator>>(istream& is, Set& set){
+        //int element;
+        set.set = new int[set.size];
+        for (int i = 0, k = 1; i < set.size; ++i, k++) {
+            cout << "Enter " << k << " number: ";
+            is >> set.set[i];
+            //set.addElement(element, i);
+
+            is.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        return is;
 };

@@ -25,7 +25,8 @@ void Lab2 ::start(){
             cout << "2. Exit" << endl;
 
             cin >> choice;
-        }while(choice < 1 || choice > 2);
+
+        }while(choice < 1 || choice > 2 );
 
         switch(choice){
             case 1:
@@ -58,24 +59,11 @@ void randomFilling (Set& sets, int newSize, int j){
 }
 
 void userFilling (Set& sets, int newSize, int j){
-
-    int* newSet = new int[newSize];
-
-    for(int i = 0, k = 1; i < newSize; i++, k++){
-        cout << "Enter " << k << " number: ";
-        cin >> newSet[i];
-    }
+    sets.setSize(newSize);
+    cin >> sets;
 
     cout << j << " set: " << endl;
-
-    for(int i = 0; i < newSize; i++){
-        cout << newSet[i] << " ";
-        cout << endl;
-    }
-
-    sets.setArr(newSet, newSize);
-
-    delete[] newSet;
+    cout << sets;
 }
 
 void intersection_unionSet(Set* sets, int arrSize, int choiceMainMenu){
@@ -94,21 +82,33 @@ void menu(Set* sets, int arrSize){
 
     while(flag){
         int choiceMainMenu;
-        do{
-            cout << "Choose what to do: "<< endl;
-            cout << "1. Create new set" << endl;
-            cout << "2. Find the intersection of 2 sets" << endl;
-            cout << "3. Find the union of 2 sets" << endl;
-            cout << "4. Exit" << endl;
 
-            cin >> choiceMainMenu;
-        }while(choiceMainMenu < 1 || choiceMainMenu > 4);
+        if(k < 2){
+            do{
+                cout << endl << "Choose what to do: "<< endl;
+                cout << "1. Create new set" << endl;
+                cout << "4. Exit" << endl;
+
+                cin >> choiceMainMenu;
+            }while(choiceMainMenu != 1 && choiceMainMenu != 4);
+        } else{
+            do{
+                cout << endl << "Choose what to do: "<< endl;
+                cout << "2. Find the intersection of 2 sets" << endl;
+                cout << "3. Find the union of 2 sets" << endl;
+                cout << "4. Exit" << endl;
+
+                cin >> choiceMainMenu;
+            }while(choiceMainMenu <= 1 || choiceMainMenu > 4);
+
+        }
 
         switch(choiceMainMenu){
             case 1: 
                 int choiceCaseOne, newSize;
                 cout << "Enter the size of the " << n << " set:" << endl;
                 cin >> newSize;
+
                 do{
                     cout << "Choose what to do: "<< endl;
                     cout << "1. Fill the set randomly" << endl;
