@@ -18,6 +18,7 @@ class Instagram : public TikTok, protected PhotoContent{
 
     void creatStory(string title, string description);
     int getStoryViews();
+
 };
 
 

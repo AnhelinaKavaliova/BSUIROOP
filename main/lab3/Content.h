@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Content{
+class Content {
     string title;
     int views,likes;
 
@@ -18,7 +18,8 @@ class Content{
     void like();
     int getViews();
     int getLikes();
-    void setTitle();
+    void setTitle(string title);
+
 
 };
 
