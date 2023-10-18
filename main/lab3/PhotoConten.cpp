@@ -9,7 +9,7 @@ PhotoContent :: PhotoContent(){
 
 }
 PhotoContent :: PhotoContent(string title){
-    this->setTitle(title);
+    setTitle(title);
 
 }
 PhotoContent :: PhotoContent(const PhotoContent& other){
@@ -23,9 +23,7 @@ PhotoContent :: ~PhotoContent(){
 
 void PhotoContent :: addDescription(){
     cout <<"Enter description: " << endl;
-    string newDescription;
-    cin >> newDescription;
-    this->description = newDescription;
+    getline(cin,description);
 
 }
 string PhotoContent :: readDescription(){

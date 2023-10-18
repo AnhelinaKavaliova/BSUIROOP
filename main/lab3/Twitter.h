@@ -16,7 +16,7 @@ class Twitter : public Instagram{
     ~Twitter();
 
    void retweet();
-   
+   int amountOfRetweets();
 };
 
 

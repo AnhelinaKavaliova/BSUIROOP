@@ -5,19 +5,16 @@
 using namespace std;
 
 DirectMessage :: DirectMessage(){
-    sender = "";
     message = "";
     reciever = "";
 }
 
-DirectMessage :: DirectMessage(string sender, string reciever, string message){
-    this->sender = sender;
+DirectMessage :: DirectMessage(string reciever, string message){
     this->reciever = reciever;
     this->message = message;
 
 }
 DirectMessage :: DirectMessage(const DirectMessage& other){
-    sender = other.sender;
     reciever = other.reciever;
     message = other.message;
 
@@ -26,16 +23,17 @@ DirectMessage :: ~DirectMessage(){
     cout << "Destrouctor" << endl;
 }
 
-void DirectMessage :: sendMessage(string sender, string reciever, string message){
-
+void DirectMessage :: sendMessage(){
+    
+    cout << "Enter who you want to send message: ";
+    cin>>reciever;
+    cout<<"Enter your message: ";
+    getline(cin,message);
 }
 string DirectMessage :: getMessage(){
     return message;
 }
 
-string DirectMessage :: getSender(){
-    return sender;
-}
 string DirectMessage :: getReciever(){
     return reciever;
 }

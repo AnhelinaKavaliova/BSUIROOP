@@ -19,6 +19,10 @@ class Content {
     int getViews();
     int getLikes();
     void setTitle(string title);
+    string getTitle();
+    void incrementViews();
+    void setViews();
+    void enterTitle();
 
 
 };

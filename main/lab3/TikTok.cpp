@@ -6,37 +6,54 @@ using namespace std;
 
 TikTok :: TikTok(){
     sound = "";
-    comments[100] = nullptr;
+    comments[100] = {};
 
 }
 TikTok :: TikTok(string title, string sound){
-    this->setTitle(title);
+    setTitle(title);
     this->sound = sound;
 
 }
 TikTok :: TikTok(const TikTok& other){
-    
-
+    for(int i = 0; i <100; i++){
+        comments[i]=other.comments[i];
+    }
+    sound = other.sound;
 }
+
 TikTok :: ~TikTok(){
 
 }
 
-void TikTok :: setSound(string sound){
-    this->sound = sound;
+void TikTok :: setSound(){
+    cout << "Enter the sound: ";
+    getline(cin, sound);
 
 }
 string TikTok :: getSound(){
     return sound;
 
 }
-string TikTok :: sendComment(string comment){
+string TikTok :: sendComment(){
+    int i = 0;
+    if(!comments[0].empty()){
+        do{
+             i++;
+        }while(!comments[i].empty());
+    }
+
+    cout<<"Enter your comment: ";
+    getline(cin,comments[i]);
 
 
 }
 void TikTok :: readComments(){
-    for(int i = 0, j = 1; i < 100; i++, j++){
-        cout << j << " comment: " << comments[i] << endl;
+    int i = 0, j = 1;
+    if(!comments[0].empty()){
+        do{
+             cout << j << " comment: " << comments[i] << endl;
+             i++,j++;
+        }while(!comments[i].empty()&& i<100);
     }
 
 }

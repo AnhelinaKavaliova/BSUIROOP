@@ -16,7 +16,7 @@ class VideoContent : public virtual Content{
     ~VideoContent();
 
     void playVideo();
-    int getDuration();
+    double getDuration();
 };
 
 

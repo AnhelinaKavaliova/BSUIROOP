@@ -17,9 +17,9 @@ class TikTok : public VideoContent, protected DirectMessage{
     TikTok(const TikTok& other);
     ~TikTok();
 
-    void setSound(string sound);
+    void setSound();
     string getSound();
-    string sendComment(string comment);
+    string sendComment();
     void readComments();
 
 };

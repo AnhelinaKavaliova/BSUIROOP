@@ -7,17 +7,16 @@ using namespace std;
 
 
 class DirectMessage{
-    string sender, reciever, message;
+    string reciever, message;
 
     public:
     DirectMessage();
-    DirectMessage(string sender, string reciever, string message);
+    DirectMessage( string reciever, string message);
     DirectMessage(const DirectMessage& other);
     ~DirectMessage();
 
-    void sendMessage(string sender, string reciever, string message);
+    void sendMessage();
     string getMessage();
-    string getSender();
     string getReciever();
 
 };

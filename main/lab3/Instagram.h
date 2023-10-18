@@ -8,16 +8,16 @@
 using namespace std;
 
 class Instagram : public TikTok, protected PhotoContent{
-    int stories;
-
+    bool postedStory =0;
     public:
     Instagram();
     Instagram(string title);
     Instagram(const Instagram& other);
     ~Instagram();
 
-    void creatStory(string title, string description);
+    void creatStory();
     int getStoryViews();
+
 
 };
 
