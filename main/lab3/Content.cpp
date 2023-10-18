@@ -8,6 +8,7 @@ using namespace std;
 Content :: Content(){
     views = likes = 0;
     title = "";
+    myLike =0;
 }
 Content :: Content(string title){
     this->title = title;
@@ -17,21 +18,26 @@ Content :: Content(const Content& other){
     likes = other.likes;
     title = other.title;
     views = other.views;
+    myLike = other.myLike;
 }
 
 Content :: ~Content(){
-    cout << "Destrouctor"<< endl;
+    //cout << "Destrouctor"<< endl;
 }
 
 void Content :: like(){
     cout << "You liked it!" << endl;
-    likes++;
+    myLike = 1;
 }
 int Content :: getViews(){
     return views;
 }
-int Content :: getLikes(){
-    return likes;
+void Content :: getLikes(){
+    srand(time(NULL));
+    if(likes == 0){
+         likes=rand()%1000+1;
+    }
+    cout <<"The number of likes: " <<likes<<endl;
 }
 void Content :: setTitle(string title){
     this->title = title;  
@@ -46,12 +52,18 @@ void Content :: incrementViews(){
 }
 void Content :: setViews(){
     srand(time(NULL));
-    views=rand()%100+1;
+    if(views==0){
+        do{
+            views=rand()%2000+1;
+        }while(views<likes);   
+    }
+    cout <<"The number of views: " <<views<<endl;
 
 }
 
 void Content :: enterTitle(){
     cout << "Enter the title: ";
+    cin.ignore();
     getline(cin, title); 
 }
 

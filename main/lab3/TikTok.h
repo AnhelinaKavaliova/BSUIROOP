@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class TikTok : public VideoContent, protected DirectMessage{
+class TikTok : public VideoContent, public DirectMessage{
     string sound;
     string comments[100];
 

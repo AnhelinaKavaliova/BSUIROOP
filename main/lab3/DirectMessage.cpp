@@ -28,6 +28,7 @@ void DirectMessage :: sendMessage(){
     cout << "Enter who you want to send message: ";
     cin>>reciever;
     cout<<"Enter your message: ";
+    cin.ignore();
     getline(cin,message);
 }
 string DirectMessage :: getMessage(){

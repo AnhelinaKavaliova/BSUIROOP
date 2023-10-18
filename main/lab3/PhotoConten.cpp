@@ -23,6 +23,7 @@ PhotoContent :: ~PhotoContent(){
 
 void PhotoContent :: addDescription(){
     cout <<"Enter description: " << endl;
+    cin.ignore();
     getline(cin,description);
 
 }

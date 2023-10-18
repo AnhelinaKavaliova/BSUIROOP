@@ -25,8 +25,12 @@ void Twitter :: retweet(){
     retweets++;
 }
 
-int Twitter :: amountOfRetweets(){
+void Twitter :: amountOfRetweets(){
     cout << "You retweeted "<< retweets << " of tweets"<< endl;
-    return retweets;
 
+}
+
+void Twitter :: createTweet(){
+    addDescription();
+    cout << "Your tweet was created"<<endl;
 }

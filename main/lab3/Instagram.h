@@ -16,7 +16,7 @@ class Instagram : public TikTok, protected PhotoContent{
     ~Instagram();
 
     void creatStory();
-    int getStoryViews();
+    void getStoryViews();
 
 
 };

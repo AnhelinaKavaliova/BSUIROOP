@@ -8,6 +8,7 @@ using namespace std;
 class Content {
     string title;
     int views,likes;
+    bool myLike;
 
     public:
     Content();
@@ -17,12 +18,13 @@ class Content {
 
     void like();
     int getViews();
-    int getLikes();
+    void getLikes();
     void setTitle(string title);
     string getTitle();
     void incrementViews();
     void setViews();
     void enterTitle();
+
 
 
 };

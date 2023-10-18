@@ -27,6 +27,7 @@ TikTok :: ~TikTok(){
 
 void TikTok :: setSound(){
     cout << "Enter the sound: ";
+    cin.ignore();
     getline(cin, sound);
 
 }
@@ -43,6 +44,7 @@ string TikTok :: sendComment(){
     }
 
     cout<<"Enter your comment: ";
+    cin.ignore();
     getline(cin,comments[i]);
 
 
@@ -54,6 +56,6 @@ void TikTok :: readComments(){
              cout << j << " comment: " << comments[i] << endl;
              i++,j++;
         }while(!comments[i].empty()&& i<100);
-    }
+    }else cout <<"0 comments here"<<endl;
 
 }

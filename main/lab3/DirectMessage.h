@@ -17,6 +17,7 @@ class DirectMessage{
 
     void sendMessage();
     string getMessage();
+
     string getReciever();
 
 };

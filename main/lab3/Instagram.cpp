@@ -26,9 +26,10 @@ void Instagram :: creatStory(){
     addDescription();
 
     postedStory =1;
+    cout << "You posted the story"<< endl;
 
 }
-int Instagram :: getStoryViews(){
+void Instagram :: getStoryViews(){
     int  views =getViews();
     if(postedStory==1){
         if(views == 0){
@@ -36,6 +37,6 @@ int Instagram :: getStoryViews(){
         }
     }else cout << "You didn't post the story" <<endl;
 
-    return views;
+    cout<<"The number of views: "<<views <<endl;
     
 }
