@@ -26,8 +26,11 @@ Content :: ~Content(){
 }
 
 void Content :: like(){
-    cout << "You liked it!" << endl;
-    myLike = 1;
+    if(myLike == 0){
+        cout << "You liked it!" << endl; 
+        myLike = 1; 
+    }else cout << "You unliked it!"<<endl;
+    
 }
 int Content :: getViews(){
     return views;
