@@ -35,3 +35,18 @@ void ToyStore :: orderInfo(){
         }
     }
 }
+
+void ToyStore :: catalog(){
+    cout << "Catalog:" << endl;
+    cout<<"1. Board games("<< BoardGame :: id <<")" <<endl;
+    cout<<"2. Cars("<< Car :: id <<")" <<endl;
+    cout<<"3. Barbie("<< Barbie :: id <<")" <<endl;
+    cout<<"4. Talking doll("<< TalkingDoll :: id <<")" <<endl;
+}
+
+Toy ToyStore :: getOrder(){
+
+}
+void ToyStore :: setOrder(Toy &toy){
+
+}

@@ -17,8 +17,6 @@ class Barbie : public Doll{
         setPrice(6.99);
         setAgeRestriction(4);
         setCanSpeak(0);
-        this -> count = count;
-        id -= count;
     };
 
     ~Barbie(){

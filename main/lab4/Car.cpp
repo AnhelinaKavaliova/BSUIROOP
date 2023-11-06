@@ -1,28 +1,20 @@
-#include"Toy.h"
-#include<iostream>
-#include<string>
-
+#include"Car.h"
 using namespace std;
 
-class Car : public Toy{
-    string color;
-    public:
-    static int Count;
-    Car(){
-        setName("Car");
-        setPrice(10.99);
-        setAgeRestriction(6);
-        Count++;
-    };
 
-    void setColor(string color){
-        this->color = color;
-    }
-
-    string getColor(){
-        return color;
-    }
-
+Car :: Car(int count){
+    this -> count = count;
+    id -= count;
+    if(id < 0) throw 0;
+    setName("Car");
+    setPrice(10.99);
+    setAgeRestriction(6);
 };
 
-int Car :: Count = 0;
+void Car :: setColor(string color){
+    this->color = color;
+}
+
+string Car :: getColor(){
+    return color;
+}

@@ -11,7 +11,13 @@ bool Doll :: getCanSpeak(){
     return canSpeak;
 }
 void Doll :: sayHello(){
-    if(canSpeak){
-        cout <<"The doll can speak"<<endl;
-    }else cout <<"The doll can't speak"<<endl;
+    try{
+        if(canSpeak) cout <<"Hi!"<<endl;
+        else throw "The doll can't speak";
+    }
+    catch(const char* msg){
+        cout << msg <<" - first handler"<<endl;
+        throw;
+    }
+    
 }

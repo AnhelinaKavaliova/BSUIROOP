@@ -2,7 +2,10 @@
 #define TOYSTORE_H
 #include<iostream>
 #include<string>
-#include"Toy.h"
+#include"Car.h"
+#include"BoardGame.h"
+#include "Barbie.h"
+#include"TalkingDoll.h"
 #include<exception>
 
 using namespace std;
@@ -13,11 +16,14 @@ class ToyStore{
     public:
     ToyStore();
     ~ToyStore();
+    Toy getOrder();
+    void setOrder(Toy &toy);
     void randomSetIsOpen();
     bool getIsOpen();
     void open();
     void close();
     void orderInfo();
+    void catalog();
 };
 
 #endif

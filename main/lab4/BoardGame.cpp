@@ -1,28 +1,22 @@
-#include"Toy.h"
-#include<iostream>
-#include<string>
+#include "BoardGame.h"
 
 using namespace std;
 
-class BoardGame : public Toy{
-    int numberOfPlayers;
-    public:
-    static int Count;
-    BoardGame(){
-        setName("BoardGame");
-        setPrice(10.99);
-        setAgeRestriction(12);
-        Count++;
-    };
-
-    void setNumberOfPlayers(int numberOfPlayers){
-        this->numberOfPlayers = numberOfPlayers;
-    }
-
-    int getNumberOfPlayers(){
-        return numberOfPlayers;
-    }
-
+BoardGame :: BoardGame(int count){
+    this -> count = count;
+    id -= count;
+    if(id < 0) throw 0;
+    setName("BoardGame");
+    setPrice(10.99);
+    setAgeRestriction(12);
+    
 };
 
-int BoardGame :: Count = 0;
+void BoardGame :: setNumberOfPlayers(int numberOfPlayers){
+    this->numberOfPlayers = numberOfPlayers;
+}
+
+int BoardGame :: getNumberOfPlayers(){
+    return numberOfPlayers;
+}
+
