@@ -2,9 +2,10 @@
 
 using namespace std;
 
+int TalkingDoll :: id = 2;
 
 TalkingDoll:: TalkingDoll(int count){
-    this -> count = count;
+    setCount(count);
     id -= count;
     if(id < 0) throw 0;
     setName("TalkingDoll");

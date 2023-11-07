@@ -8,7 +8,7 @@ using namespace std;
 
 class BoardGame : public Toy{
     int numberOfPlayers;
-    int count;
+    //int count;
     public:
     static int id;
     BoardGame(int count);
@@ -19,6 +19,6 @@ class BoardGame : public Toy{
 
 };
 
-int BoardGame :: id = 2;
+//int BoardGame :: id = 2;
 
 #endif

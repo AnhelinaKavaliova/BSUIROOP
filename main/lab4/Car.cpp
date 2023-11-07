@@ -1,9 +1,10 @@
 #include"Car.h"
 using namespace std;
 
+int Car :: id = 5; 
 
 Car :: Car(int count){
-    this -> count = count;
+    setCount(count);
     id -= count;
     if(id < 0) throw 0;
     setName("Car");

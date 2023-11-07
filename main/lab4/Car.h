@@ -8,7 +8,7 @@ using namespace std;
 
 class Car : public Toy{
     string color;
-    int count;
+    //int count;
     public:
     static int id;
     Car(int count);
@@ -17,6 +17,6 @@ class Car : public Toy{
 
 };
 
-int Car :: id = 5;
+//int Car :: id = 5;
 
 #endif

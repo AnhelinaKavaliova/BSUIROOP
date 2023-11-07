@@ -7,14 +7,15 @@
 using namespace std;
 
 class Barbie : public Doll{
-    int count;
+    //int count;
     public:
     static int id;
+    int valId;
     Barbie(int count);
-
+    int geValId();
     ~Barbie();
 };
 
-int Barbie :: id = 5;
+//s
 
 #endif

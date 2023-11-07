@@ -7,7 +7,7 @@
 using namespace std;
 
 class TalkingDoll : public Doll{
-    int count;
+    //int count;
     public:
     static int id;
     TalkingDoll(int count);
@@ -15,6 +15,6 @@ class TalkingDoll : public Doll{
 
 };
 
-int TalkingDoll :: id = 2;
+//int TalkingDoll :: id = 2;
 
 #endif

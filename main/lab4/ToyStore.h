@@ -7,12 +7,14 @@
 #include "Barbie.h"
 #include"TalkingDoll.h"
 #include<exception>
+#include <typeinfo>
 
 using namespace std;
 
 class ToyStore{
     bool isOpen;
     Toy* order;
+    static int numbOrder;
     public:
     ToyStore();
     ~ToyStore();
@@ -24,6 +26,10 @@ class ToyStore{
     void close();
     void orderInfo();
     void catalog();
+    int getNumbOrder();
+    void incrNumbOrder();
 };
+
+//int ToyStore :: numbOrder = 0;
 
 #endif

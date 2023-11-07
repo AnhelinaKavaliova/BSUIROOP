@@ -9,7 +9,7 @@ class Toy{
     string name;
     double price;
     int ageRestriction;
-
+    int count;
     public:
     Toy();
     Toy(string name, double price, int agerestriction);
@@ -20,6 +20,9 @@ class Toy{
     void setPrice(double price);
     int getAgeRestriction();
     void setAgeRestriction(int ageRestriction);
+    int getCount();
+    void setCount(int count);
+
     void displayInfo();
 
 };

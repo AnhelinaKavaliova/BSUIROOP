@@ -1,28 +1,25 @@
-#include"Doll.h"
-#include<iostream>
-#include<string>
+#include "Barbie.h"
 
 using namespace std;
+int Barbie :: id = 5;
 
-class Barbie : public Doll{
-    int count;
-    public:
-    static int id;
-    Barbie(int count){
-        cout<<"Barbie constructor"<<endl;
-        this -> count = count;
-        id -= count;
-        if(id < 0) throw 0;
-        setName("Barbie");
-        setPrice(6.99);
-        setAgeRestriction(4);
-        setCanSpeak(0);
-    };
-
-    ~Barbie(){
-        cout << "Barbie destructor"<<endl;
-    }
-
+Barbie :: Barbie(int count){
+    cout<<"Barbie constructor"<<endl;
+    setCount(count);
+    id -= count;
+    if(id < 0) throw 0;
+    valId = id;
+    setName("Barbie");
+    setPrice(6.99);
+    setAgeRestriction(4);
+    setCanSpeak(0);
 };
 
-int Barbie :: id = 5;
+Barbie :: ~Barbie(){
+    cout << "Barbie destructor"<<endl;
+}
+
+int Barbie :: geValId(){
+    return valId;
+}
+
