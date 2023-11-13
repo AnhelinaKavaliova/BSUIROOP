@@ -22,6 +22,7 @@ void Lab3_1 :: start(){
     humCount = machCount = cybCount = medCybCount = docCount = surgCybCount = 0;
 
     int flag = 1;
+    
     while(flag){
         int choice;
         do{

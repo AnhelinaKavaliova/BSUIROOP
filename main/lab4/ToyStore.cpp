@@ -34,10 +34,11 @@ void ToyStore :: orderInfo(){
     }
     else{
         cout << "Your order:"<<endl;
-        for(int i = 0; i < 14; i++){
+        for(int i = 0, j = 1; i < 14; i++){
             if(order[i].getPrice() > -1 ){
-            cout <<(i+1) << ". "<< endl;
+            cout <<j<< ". "<< endl;
             order[i].displayInfo();
+            j++;
             }
         }
 
@@ -59,13 +60,11 @@ Toy ToyStore :: getOrder(){
 }
 void ToyStore :: setOrder(Toy &toy){
     int i = getNumbOrder();
-    cout <<  "HELP" << i << endl;
     int flag = 0;
     if(i != 0){
         for(int j = 0; j < 14; j++)
         {
             if(order[j].getName() == toy.getName()){
-                cout<<"ERORRREOROEOREOREOROEROER"<<endl;
                 i = j;
                 order[i].setCount(toy.getCount());
                 flag = 1;

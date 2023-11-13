@@ -19,6 +19,7 @@ void Human :: setName(string name){
 }
 string Human :: getName(){
     return name;
+    
 }
 void Human :: speak(){
     if(name.empty()){

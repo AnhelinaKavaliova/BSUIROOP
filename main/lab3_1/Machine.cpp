@@ -23,6 +23,7 @@ void  Machine :: dataOfCreation(){
     cout<<"Data of creation: "<<day<<"."<<month<<"."<<year<<endl;
 }
 void Machine :: setModel(string model){
+    
     this->model = model;
 }
 string Machine :: getModel(){

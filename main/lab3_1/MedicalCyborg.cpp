@@ -25,6 +25,7 @@ void MedicalCyborg :: checkBusy(){
 
 }
 bool MedicalCyborg :: getBusy(){
+    
     return busy;
 }
 

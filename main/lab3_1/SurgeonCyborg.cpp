@@ -21,6 +21,10 @@ void SurgeonCyborg :: operation(){
 }
 
 void  SurgeonCyborg :: status(){
-    MedicalCyborg :: status();
+    //MedicalCyborg :: status();
+    Cyborg :: status();
+    setSpecialization(specialization);
+    outputSpec();
+    checkBusy();
     operation();
 }

@@ -2,6 +2,7 @@
 #include "lab1/lab1.h"
 #include "lab2/lab2.h"
 #include "lab3/lab3.h"
+#include "lab3_1/lab3_1.h"
 
 
 using namespace std;
@@ -37,7 +38,7 @@ int main() {
                 break;
             case 3:
                 {
-                    Lab3 lab3;
+                    Lab3_1 lab3;
                     lab3.start(); 
                 }
                 break;

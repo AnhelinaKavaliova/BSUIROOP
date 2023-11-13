@@ -18,6 +18,7 @@ Cyborg :: Cyborg(string name, string model){
 }
 Cyborg :: ~Cyborg(){}
 int Cyborg :: getStrength(){
+    
     return strength;
 }
 int Cyborg :: getEnergy(){

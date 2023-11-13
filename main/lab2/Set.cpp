@@ -44,6 +44,7 @@ void Set :: setArr(const int* newSet, int newSize){
     } else cout << "set is fulled";
 };
 
+
 void Set :: setSize(int newSize){
     size = newSize;
 }
