@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 void termFunc();
 void addBoardgame(ToyStore store);
 void addCar(ToyStore store);
@@ -34,7 +35,7 @@ void Lab4 :: start(){
                         cout << "Caught exception: " << e.what() << endl;
                         cin.clear(); 
                         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-                        continue; 
+                        choice = -1; 
                     }
                 }  while(choice < 0 || choice > 2);
 
@@ -63,6 +64,7 @@ void termFunc(){
 }
 void menu(ToyStore store){
     int flag = 1;
+    int boardGameFlag = 1, carFlag = 1, barbieFlag = 1, talkingDoll = 1;
     while(flag){
         int choice;
         store.catalog();
@@ -77,7 +79,7 @@ void menu(ToyStore store){
                 cout << "Caught exception: " << e.what() << endl;
                 cin.clear(); 
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-                continue; 
+                choice = -1; 
             }
         } while (choice < 0 || choice > 4);
 
@@ -102,12 +104,13 @@ void menu(ToyStore store){
 
 }
 void addBoardgame(ToyStore store){
+    int flag = 0;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
         BoardGame game(count);
-        store.setOrder(game);
+        store.setOrder(game, flag);
     }
     catch(int){
         BoardGame :: id +=count;
@@ -116,12 +119,13 @@ void addBoardgame(ToyStore store){
 }
 
 void addCar(ToyStore store){
+    int flag = 1;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
         Car car(count);
-        store.setOrder(car);
+        store.setOrder(car, flag);
     }
     catch(int){
         Car :: id +=count;
@@ -129,12 +133,13 @@ void addCar(ToyStore store){
     }
 }
 void addBarbie(ToyStore store){
+    int flag = 2;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
         Barbie barbie(count);
-        store.setOrder(barbie);
+        store.setOrder(barbie, flag);
         try{
         barbie.sayHello();
         }
@@ -148,12 +153,13 @@ void addBarbie(ToyStore store){
     }
 }
 void addTalkingDoll(ToyStore store){
+    int flag = 3;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
         TalkingDoll talkingdoll(count);
-        store.setOrder(talkingdoll);
+        store.setOrder(talkingdoll, flag);
     }
     catch(int){
         TalkingDoll :: id +=count;

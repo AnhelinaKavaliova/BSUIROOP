@@ -2,8 +2,9 @@
 
 using namespace std;
 
-Doll :: Doll(){ cout <<"Doll constructor"<<endl;}
-Doll :: ~Doll(){cout << "Doll destructor" <<endl;}
+
+Doll :: Doll(){ /*cout <<"Doll constructor"<<endl;*/}
+Doll :: ~Doll(){/*cout << "Doll destructor" <<endl;*/}
 void Doll :: setCanSpeak(bool canSpeak){
     this->canSpeak = canSpeak;
 }
@@ -20,4 +21,9 @@ void Doll :: sayHello(){
         throw;
     }
     
+}
+
+void Doll :: displayInfo() {
+   Toy :: displayInfo();
+   getAccessories();
 }

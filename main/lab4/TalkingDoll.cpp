@@ -4,6 +4,11 @@ using namespace std;
 
 int TalkingDoll :: id = 2;
 
+TalkingDoll :: TalkingDoll(){
+    setCount(0);
+}
+
+
 TalkingDoll:: TalkingDoll(int count){
     setCount(count);
     id -= count;
@@ -15,5 +20,9 @@ TalkingDoll:: TalkingDoll(int count){
 };
 TalkingDoll :: ~TalkingDoll(){
 
+}
+
+void TalkingDoll :: getAccessories(){
+    cout << "Accessories: bottle, rubber band" << endl;
 }
 

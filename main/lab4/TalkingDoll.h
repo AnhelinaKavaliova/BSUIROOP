@@ -10,9 +10,10 @@ class TalkingDoll : public Doll{
     //int count;
     public:
     static int id;
+    TalkingDoll();
     TalkingDoll(int count);
     ~TalkingDoll();
-
+    void getAccessories();
 };
 
 //int TalkingDoll :: id = 2;

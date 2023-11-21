@@ -3,11 +3,15 @@
 
 using namespace std;
 
+
 int ToyStore :: numbOrder = 0;
 
 ToyStore :: ToyStore(){
     try {
-        order = new Toy[14];
+        order[0] = new BoardGame();
+        order[1] = new Car();
+        order[2] = new Barbie();
+        order[3] = new TalkingDoll();
     } 
     catch (const exception& e) {
         cout<< "Memory allocation failed: " << e.what() << endl;
@@ -29,19 +33,10 @@ void ToyStore :: close(){
     isOpen = 0;
 }
 void ToyStore :: orderInfo(){
-    if(order[0].getPrice()< 0){
-        cout << "Your card is empty" << endl;
-    }
-    else{
-        cout << "Your order:"<<endl;
-        for(int i = 0, j = 1; i < 14; i++){
-            if(order[i].getPrice() > -1 ){
-            cout <<j<< ". "<< endl;
-            order[i].displayInfo();
-            j++;
-            }
+    for(int i = 0; i < 4; i++){
+        if(order[i]->getCount() != 0){
+            order[i]->displayInfo();
         }
-
     }
     
 }
@@ -58,22 +53,11 @@ void ToyStore :: catalog(){
 Toy ToyStore :: getOrder(){
 
 }
-void ToyStore :: setOrder(Toy &toy){
-    int i = getNumbOrder();
-    int flag = 0;
-    if(i != 0){
-        for(int j = 0; j < 14; j++)
-        {
-            if(order[j].getName() == toy.getName()){
-                i = j;
-                order[i].setCount(toy.getCount());
-                flag = 1;
-                break;
-            } 
-        }
-    } 
-    if(!flag) order[i] = toy;
-    incrNumbOrder();
+
+void ToyStore :: setOrder(Toy &toy, int i){
+    if(order[i]->getCount() == 0){
+        *order[i] = toy;
+    }else order[i]->setCount(toy.getCount());
 }
 int ToyStore :: getNumbOrder(){
     return numbOrder;

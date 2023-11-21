@@ -13,13 +13,12 @@ using namespace std;
 
 class ToyStore{
     bool isOpen;
-    Toy* order;
+    Toy* order[4];
     static int numbOrder;
     public:
     ToyStore();
     ~ToyStore();
     Toy getOrder();
-    void setOrder(Toy &toy);
     void randomSetIsOpen();
     bool getIsOpen();
     void open();
@@ -28,6 +27,8 @@ class ToyStore{
     void catalog();
     int getNumbOrder();
     void incrNumbOrder();
+    //template <typename T>
+    void setOrder(Toy &toy, int i);
 };
 
 //int ToyStore :: numbOrder = 0;

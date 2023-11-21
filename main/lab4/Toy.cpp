@@ -2,19 +2,20 @@
 
 using namespace std;
 
+
 Toy :: Toy(){
     name = "";
     price = -1;
     ageRestriction= -1;
     count = 0;
-    cout <<"Toy constructor" <<endl;
+    //cout <<"Toy constructor" <<endl;
 }
 Toy :: Toy(string name, double price, int agerestriction){
     this->name = name;
     this->price= price;
     this->ageRestriction= ageRestriction;
 }
-Toy :: ~Toy(){cout <<"Toy destructor" <<endl;};
+Toy :: ~Toy(){/*cout <<"Toy destructor" <<endl;*/};
     
 string Toy :: getName(){
     return name;

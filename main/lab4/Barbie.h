@@ -11,9 +11,12 @@ class Barbie : public Doll{
     public:
     static int id;
     int valId;
+    Barbie();
     Barbie(int count);
     int geValId();
     ~Barbie();
+    void getAccessories();
+    //void displayInfo();
 };
 
 //s

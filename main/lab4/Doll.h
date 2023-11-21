@@ -14,6 +14,8 @@ class Doll : public Toy{
     void setCanSpeak(bool canSpeak);
     bool getCanSpeak();
     void sayHello();
+    virtual void getAccessories() = 0;
+    void displayInfo();
 
 };
 

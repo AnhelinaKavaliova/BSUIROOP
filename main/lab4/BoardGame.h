@@ -11,6 +11,7 @@ class BoardGame : public Toy{
     //int count;
     public:
     static int id;
+    BoardGame();
     BoardGame(int count);
 
     void setNumberOfPlayers(int numberOfPlayers);

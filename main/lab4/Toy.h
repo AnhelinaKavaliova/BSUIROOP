@@ -23,7 +23,7 @@ class Toy{
     int getCount();
     void setCount(int count);
 
-    void displayInfo();
+    virtual void displayInfo();
 
 };
 
