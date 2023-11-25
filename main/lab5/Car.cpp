@@ -24,3 +24,7 @@ void Car :: setColor(string color){
 string Car :: getColor(){
     return color;
 }
+
+void Car :: changeID(int newID){
+    id += newID;
+}

@@ -1,0 +1,6 @@
+Catalog:
+             Name     Count
+1.    Board games         0
+2.           Cars         4
+3.         Barbie         4
+4.   Talking doll         2

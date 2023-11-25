@@ -26,3 +26,7 @@ void TalkingDoll :: getAccessories(){
     cout << "Accessories: bottle, rubber band" << endl;
 }
 
+void TalkingDoll :: changeID(int newID){
+    id += newID;
+}
+

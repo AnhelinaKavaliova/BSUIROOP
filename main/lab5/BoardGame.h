@@ -17,6 +17,7 @@ class BoardGame : public Toy{
     void setNumberOfPlayers(int numberOfPlayers);
 
     int getNumberOfPlayers();
+    void changeID(int newID);
 
 };
 

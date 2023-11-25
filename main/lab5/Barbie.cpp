@@ -36,3 +36,6 @@ void Barbie :: getAccessories(){
 //     Toy :: displayInfo();
 //     getAccessories();
 // }
+void Barbie :: changeID(int newID){
+    id += newID;
+}

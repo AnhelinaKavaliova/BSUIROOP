@@ -7,6 +7,8 @@
 #include"ToyStore.h"
 #include"Toy.h"
 #include"MyException.h"
+#include<iomanip>
+#include<fstream>
 
 using namespace std;
 

@@ -47,3 +47,13 @@ void Toy :: displayInfo() {
     cout << "Age Restriction: " << ageRestriction << endl;
     cout << "In your card "<< count << " of them"<<endl;
 }
+
+ostream& operator<<(ostream& os, const Toy* toy){
+    os<<setw(15) << toy->name << setw(10) << toy->price << setw(20) << toy->ageRestriction <<  setw(10) << toy->count << endl;
+    return os;
+}
+istream& operator>>(istream& is, Toy* toy){
+
+    //is>>setw(15) >> toy->name >> setw(10) >> toy->price >> setw(15) >> toy->ageRestriction >>  setw(10) >> toy->count;
+
+}

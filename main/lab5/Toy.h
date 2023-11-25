@@ -2,6 +2,7 @@
 #define TOY_H
 #include<iostream>
 #include<string>
+#include<iomanip>
 
 using namespace std;
 
@@ -24,6 +25,8 @@ class Toy{
     void setCount(int count);
 
     virtual void displayInfo();
+    friend ostream& operator<<(ostream& os, const Toy* toy);
+    friend istream& operator>>(istream& is, Toy* toy);
 
 };
 

@@ -25,3 +25,6 @@ int BoardGame :: getNumberOfPlayers(){
     return numberOfPlayers;
 }
 
+void BoardGame :: changeID(int newID){
+    id += newID;
+}

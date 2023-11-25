@@ -14,6 +14,7 @@ class TalkingDoll : public Doll{
     TalkingDoll(int count);
     ~TalkingDoll();
     void getAccessories();
+    void changeID(int newID);
 };
 
 //int TalkingDoll :: id = 2;

@@ -9,6 +9,8 @@ void addCar(ToyStore store);
 void addBarbie(ToyStore store);
 void addTalkingDoll(ToyStore store);
 void menu(ToyStore store);
+void orderMenu(ToyStore store);
+bool is_inFile(string str);
 
 void Lab4 :: start(){
     set_terminate(termFunc);
@@ -22,10 +24,13 @@ void Lab4 :: start(){
             int flag = 1;
             while(flag){
                 do{
+                    //cout.setf(ios::right);
+                    //cout.width(50);
                     cout << "Choose what to do: "<<endl;
                     cout << "0. Exit" << endl;
                     cout << "1. Open catalog" <<endl;
                     cout <<"2. Open cart" << endl;
+                    //cout.unsetf(ios::right);
                     try {
                         cin >> choice;
                         if (cin.fail()) {
@@ -45,6 +50,8 @@ void Lab4 :: start(){
                         break;
                     case 2:
                         store.orderInfo();
+                        orderMenu(store);
+                        store.searchToy();
                         break;
                     case 0:
                         flag = 0;
@@ -64,7 +71,6 @@ void termFunc(){
 }
 void menu(ToyStore store){
     int flag = 1;
-    int boardGameFlag = 1, carFlag = 1, barbieFlag = 1, talkingDoll = 1;
     while(flag){
         int choice;
         store.catalog();
@@ -103,6 +109,47 @@ void menu(ToyStore store){
     }
 
 }
+
+void orderMenu(ToyStore store){
+    int flag = 1;
+    while(flag){
+        int choice;
+        cout << "Do you want to remove something?: " << endl;
+        cout << "1. Yes" << endl;
+        cout << "2. Noy" << endl;
+        do {
+            try {
+                cin >> choice;
+                if (cin.fail()) {
+                    throw MyException(); 
+                }
+            } catch (const MyException& e) {
+                cout << "Caught exception: " << e.what() << endl;
+                cin.clear(); 
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+                choice = -1; 
+                cout << "Choose again: ";
+            }
+        } while (choice < 1 || choice > 2);
+
+        string orderName;
+        switch (choice)
+        {
+        case 1:
+            do{
+                cout << "Enter the name of the toy: ";
+                cin >> orderName;
+            }while(!is_inFile(orderName));
+            store.deleteOrder(orderName);
+            break;
+        case 2:
+            flag = 0;
+            break;
+        }
+    }
+
+}
+
 void addBoardgame(ToyStore store){
     int flag = 0;
     int count;
@@ -165,5 +212,39 @@ void addTalkingDoll(ToyStore store){
         TalkingDoll :: id +=count;
         cout << "We don't have that many talking dolls. Check the catalog to see how many are left"<<endl;
     }
+
+}
+
+bool is_inFile(string str){
+    ifstream inpF("order.txt");
+    if (inpF.eof()) {
+        cout << "End of file reached." << endl;
+    }
+
+    if (inpF.fail()) {
+        cerr << "Failure while reading data." << endl;
+    }
+
+    if (inpF.bad()) {
+        cerr << "Critical error in stream operation." << endl;
+    }
+
+    if (inpF.good()) {
+        cout << "Stream is in good state." << endl;
+    } else {
+        cout << "Stream is not in good state." << endl;
+    }
+    if(!inpF.is_open()){
+        cerr << "Error opening the file" << endl;
+        return false;
+    }
+    string tmp;
+    while(inpF >> tmp){
+        if(tmp == str) {
+            return true;
+        }
+    }
+
+    return false;
 
 }

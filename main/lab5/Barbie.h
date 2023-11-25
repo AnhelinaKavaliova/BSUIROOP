@@ -17,6 +17,7 @@ class Barbie : public Doll{
     ~Barbie();
     void getAccessories();
     //void displayInfo();
+    void changeID(int newID);
 };
 
 //s

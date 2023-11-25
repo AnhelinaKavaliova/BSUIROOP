@@ -15,6 +15,7 @@ class Car : public Toy{
     Car(int count);
     void setColor(string color);
     string getColor();
+    void changeID(int newID);
 
 };
 
