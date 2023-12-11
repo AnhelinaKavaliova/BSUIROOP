@@ -168,7 +168,7 @@ void ToyStore :: searchToy(){
     int endposition = infile.tellg();
     int n = endposition / sizeof(Toy);
     cout << "The count of toys: " << n << endl;
-    cout << "Enter the number of toy: ";
+    cout << "Enter the toy number: ";
     cin >> n;
     int position = (n - 1) * sizeof(Toy);
     infile.seekg(position);

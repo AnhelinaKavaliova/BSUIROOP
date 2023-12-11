@@ -49,9 +49,13 @@ void Lab4 :: start(){
                         menu(store);
                         break;
                     case 2:
+                        int findAnswear;
                         store.orderInfo();
                         orderMenu(store);
-                        store.searchToy();
+                        cout << "Do you want find something special in your order?" <<endl;
+                        cout << "1. Yes     2. No" << endl;
+                        cin>>findAnswear;
+                        if(findAnswear == 1) store.searchToy();
                         break;
                     case 0:
                         flag = 0;
