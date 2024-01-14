@@ -1,13 +1,13 @@
-#include "BoardGame.h"
+#include "BoardGame2.h"
 
 using namespace std;
 
-int BoardGame :: id = 2;
+int BoardGame2 :: id = 2;
 
-BoardGame :: BoardGame(){
+BoardGame2 :: BoardGame2(){
     setCount(0);
 }
-BoardGame :: BoardGame(int count){
+BoardGame2 :: BoardGame2(int count){
     setCount(count);
     id -= count;
     if(id < 0) throw 0;
@@ -17,14 +17,15 @@ BoardGame :: BoardGame(int count){
     
 };
 
-void BoardGame :: setNumberOfPlayers(int numberOfPlayers){
+void BoardGame2 :: setNumberOfPlayers(int numberOfPlayers){
     this->numberOfPlayers = numberOfPlayers;
 }
 
-int BoardGame :: getNumberOfPlayers(){
+int BoardGame2 :: getNumberOfPlayers(){
     return numberOfPlayers;
 }
 
-void BoardGame :: changeID(int newID){
+void BoardGame2 :: changeID(int newID){
     id += newID;
 }
+

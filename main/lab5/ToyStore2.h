@@ -1,28 +1,28 @@
-#ifndef TOYSTORE_H
-#define TOYSTORE_H
+#ifndef TOYSTORE2_H
+#define TOYSTORE2_H
 #include<iostream>
 #include<string>
 #include<fstream>
 #include<iomanip>
-#include"Car.h"
-#include"BoardGame.h"
-#include "Barbie.h"
-#include"TalkingDoll.h"
+#include"Car2.h"
+#include"BoardGame2.h"
+#include "Barbie2.h"
+#include"TalkingDoll2.h"
 #include<exception>
 #include <typeinfo>
 
 using namespace std;
 
-class ToyStore{
+class ToyStore2{
     //string pathCATALOG = "catalog.txt";
     bool isOpen;
-    Toy* order[4];
+    Toy2* order[4];
     static int numbOrder;
 
     public:
-    ToyStore();
-    ~ToyStore();
-    Toy getOrder();
+    ToyStore2();
+    ~ToyStore2();
+    Toy2 getOrder();
     //ofstream outF;
     void randomSetIsOpen();
     bool getIsOpen();
@@ -33,7 +33,7 @@ class ToyStore{
     int getNumbOrder();
     void incrNumbOrder();
     //template <typename T>
-    void setOrder(Toy &toy, int i);
+    void setOrder(Toy2 &toy, int i);
     void deleteOrder(string orderName);
     void searchToy();
 };

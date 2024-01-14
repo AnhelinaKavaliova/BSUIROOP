@@ -1,10 +1,10 @@
-#include"lab4.h"
+#include"lab5.h"
 #include<iostream>
 
 using namespace std;
 
 int main(){
-    Lab4 lab;
+    Lab5 lab;
     lab.start();
 
     return 0;

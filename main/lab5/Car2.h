@@ -1,18 +1,18 @@
-#ifndef CAR_H
-#define CAR_H
-#include"Toy.h"
+#ifndef CAR2_H
+#define CAR2_H
+#include"Toy2.h"
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-class Car : public Toy{
+class Car2 : public Toy2{
     string color;
     //int count;
     public:
     static int id;
-    Car();
-    Car(int count);
+    Car2();
+    Car2(int count);
     void setColor(string color);
     string getColor();
     void changeID(int newID);

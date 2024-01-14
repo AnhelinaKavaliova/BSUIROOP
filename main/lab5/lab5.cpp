@@ -1,21 +1,21 @@
-#include"lab4.h"
+#include"lab5.h"
 
 using namespace std;
 
 
-void termFunc();
-void addBoardgame(ToyStore store);
-void addCar(ToyStore store);
-void addBarbie(ToyStore store);
-void addTalkingDoll(ToyStore store);
-void menu(ToyStore store);
-void orderMenu(ToyStore store);
+void termFunc2();
+void addBoardgame(ToyStore2 store);
+void addCar(ToyStore2 store);
+void addBarbie(ToyStore2 store);
+void addTalkingDoll(ToyStore2 store);
+void menu(ToyStore2 store);
+void orderMenu(ToyStore2 store);
 bool is_inFile(string str);
 
-void Lab4 :: start(){
-    set_terminate(termFunc);
+void Lab5 :: start(){
+    set_terminate(termFunc2);
 
-    ToyStore store;
+    ToyStore2 store;
     try{
         if(!store.getIsOpen()) throw "Store closed!";
         else{
@@ -34,9 +34,9 @@ void Lab4 :: start(){
                     try {
                         cin >> choice;
                         if (cin.fail()) {
-                            throw MyException(); 
+                            throw MyException2(); 
                         }
-                    } catch (const MyException& e) {
+                    } catch (const MyException2& e) {
                         cout << "Caught exception: " << e.what() << endl;
                         cin.clear(); 
                         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -69,11 +69,11 @@ void Lab4 :: start(){
     }
 }
 
-void termFunc(){
+void termFunc2(){
     cout << "Store closed!" << endl;
     exit(-1);
 }
-void menu(ToyStore store){
+void menu(ToyStore2 store){
     int flag = 1;
     while(flag){
         int choice;
@@ -83,9 +83,9 @@ void menu(ToyStore store){
             try {
                 cin >> choice;
                 if (cin.fail()) {
-                    throw MyException(); 
+                    throw MyException2(); 
                 }
-            } catch (const MyException& e) {
+            } catch (const MyException2& e) {
                 cout << "Caught exception: " << e.what() << endl;
                 cin.clear(); 
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -114,7 +114,7 @@ void menu(ToyStore store){
 
 }
 
-void orderMenu(ToyStore store){
+void orderMenu(ToyStore2 store){
     int flag = 1;
     while(flag){
         int choice;
@@ -125,9 +125,9 @@ void orderMenu(ToyStore store){
             try {
                 cin >> choice;
                 if (cin.fail()) {
-                    throw MyException(); 
+                    throw MyException2(); 
                 }
-            } catch (const MyException& e) {
+            } catch (const MyException2& e) {
                 cout << "Caught exception: " << e.what() << endl;
                 cin.clear(); 
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -154,42 +154,42 @@ void orderMenu(ToyStore store){
 
 }
 
-void addBoardgame(ToyStore store){
+void addBoardgame(ToyStore2 store){
     int flag = 0;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
-        BoardGame game(count);
+        BoardGame2 game(count);
         store.setOrder(game, flag);
     }
     catch(int){
-        BoardGame :: id +=count;
+        BoardGame2 :: id +=count;
         cout << "We don't have that many board games. Check the catalog to see how many are left"<<endl;
     }
 }
 
-void addCar(ToyStore store){
+void addCar(ToyStore2 store){
     int flag = 1;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
-        Car car(count);
+        Car2 car(count);
         store.setOrder(car, flag);
     }
     catch(int){
-        Car :: id +=count;
+        Car2 :: id +=count;
         cout << "We don't have that many cars. Check the catalog to see how many are left"<<endl;
     }
 }
-void addBarbie(ToyStore store){
+void addBarbie(ToyStore2 store){
     int flag = 2;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
-        Barbie barbie(count);
+        Barbie2 barbie(count);
         store.setOrder(barbie, flag);
         try{
         barbie.sayHello();
@@ -199,21 +199,21 @@ void addBarbie(ToyStore store){
         }
     }
     catch(int){
-        Barbie :: id +=count;
+        Barbie2 :: id +=count;
         cout << "We don't have that many barbies. Check the catalog to see how many are left"<<endl;
     }
 }
-void addTalkingDoll(ToyStore store){
+void addTalkingDoll(ToyStore2 store){
     int flag = 3;
     int count;
     cout << "How much you want to add: ";
     cin >> count;
     try{
-        TalkingDoll talkingdoll(count);
+        TalkingDoll2 talkingdoll(count);
         store.setOrder(talkingdoll, flag);
     }
     catch(int){
-        TalkingDoll :: id +=count;
+        TalkingDoll2 :: id +=count;
         cout << "We don't have that many talking dolls. Check the catalog to see how many are left"<<endl;
     }
 

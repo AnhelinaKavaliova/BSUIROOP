@@ -1,18 +1,18 @@
-#ifndef BOARDGAME_H
-#define BOARDGAME_H
-#include"Toy.h"
+#ifndef BOARDGAME2_H
+#define BOARDGAME2_H
+#include"Toy2.h"
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-class BoardGame : public Toy{
+class BoardGame2 : public Toy2{
     int numberOfPlayers;
     //int count;
     public:
     static int id;
-    BoardGame();
-    BoardGame(int count);
+    BoardGame2();
+    BoardGame2(int count);
 
     void setNumberOfPlayers(int numberOfPlayers);
 

@@ -1,15 +1,15 @@
-#include"TalkingDoll.h"
+#include"TalkingDoll2.h"
 
 using namespace std;
 
-int TalkingDoll :: id = 2;
+int TalkingDoll2 :: id = 2;
 
-TalkingDoll :: TalkingDoll(){
+TalkingDoll2 :: TalkingDoll2(){
     setCount(0);
 }
 
 
-TalkingDoll:: TalkingDoll(int count){
+TalkingDoll2:: TalkingDoll2(int count){
     setCount(count);
     id -= count;
     if(id < 0) throw 0;
@@ -18,15 +18,16 @@ TalkingDoll:: TalkingDoll(int count){
     setAgeRestriction(6);
     setCanSpeak(1);
 };
-TalkingDoll :: ~TalkingDoll(){
+TalkingDoll2 :: ~TalkingDoll2(){
 
-}
+};
 
-void TalkingDoll :: getAccessories(){
+void TalkingDoll2 :: getAccessories(){
     cout << "Accessories: bottle, rubber band" << endl;
 }
 
-void TalkingDoll :: changeID(int newID){
+void TalkingDoll2 :: changeID(int newID){
     id += newID;
 }
+
 

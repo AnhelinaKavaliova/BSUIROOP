@@ -1,14 +1,14 @@
-#include"Car.h"
+#include "Car2.h"
 using namespace std;
 
 
-int Car :: id = 5; 
+int Car2 :: id = 5; 
 
-Car :: Car(){
+Car2 :: Car2(){
     setCount(0);
 }
 
-Car :: Car(int count){
+Car2 :: Car2(int count){
     setCount(count);
     id -= count;
     if(id < 0) throw 0;
@@ -17,14 +17,15 @@ Car :: Car(int count){
     setAgeRestriction(6);
 };
 
-void Car :: setColor(string color){
+void Car2 :: setColor(string color){
     this->color = color;
 }
 
-string Car :: getColor(){
+string Car2 :: getColor(){
     return color;
 }
 
-void Car :: changeID(int newID){
+void Car2 :: changeID(int newID){
     id += newID;
 }
+

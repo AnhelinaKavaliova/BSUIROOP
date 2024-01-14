@@ -1,5 +1,5 @@
       Toy Name:    Price:    Age Restriction:    Count:
 1.            Car     10.99                   6         2
 
-2.         Barbie      6.99                   4         2
+2.    TalkingDoll     10.99                   6         1
 

@@ -1,18 +1,18 @@
-#ifndef LAB4_H
-#define LAB4_H
+#ifndef LAB5_H
+#define LAB5_H
 #include<iostream>
 #include<string>
 #include<exception>
 #include<limits>
-#include"ToyStore.h"
-#include"Toy.h"
-#include"MyException.h"
+#include "ToyStore2.h"
+#include "Toy2.h"
+#include"MyException2.h"
 #include<iomanip>
 #include<fstream>
 
 using namespace std;
 
-class Lab4{
+class Lab5{
     public:
     void start();
     

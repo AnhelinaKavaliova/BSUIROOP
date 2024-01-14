@@ -1,18 +1,18 @@
-#ifndef TALKINGDOLL_H
-#define TALKINGDOLL_H
-#include"Doll.h"
+#ifndef TALKINGDOLL2_H
+#define TALKINGDOLL2_H
+#include"Doll2.h"
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-class TalkingDoll : public Doll{
+class TalkingDoll2 : public Doll2{
     //int count;
     public:
     static int id;
-    TalkingDoll();
-    TalkingDoll(int count);
-    ~TalkingDoll();
+    TalkingDoll2();
+    TalkingDoll2(int count);
+    ~TalkingDoll2();
     void getAccessories();
     void changeID(int newID);
 };

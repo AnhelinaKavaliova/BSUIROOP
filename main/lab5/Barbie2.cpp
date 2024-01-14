@@ -1,14 +1,14 @@
-#include "Barbie.h"
+#include "Barbie2.h"
 
 using namespace std;
-int Barbie :: id = 5;
+int Barbie2 :: id = 5;
 
-Barbie :: Barbie(){
+Barbie2 :: Barbie2(){
     setCount(0);
 }
 
 
-Barbie :: Barbie(int count){
+Barbie2 :: Barbie2(int count){
     //cout<<"Barbie constructor"<<endl;
     setCount(count);
     id -= count;
@@ -20,15 +20,15 @@ Barbie :: Barbie(int count){
     setCanSpeak(0);
 };
 
-Barbie :: ~Barbie(){
+Barbie2 :: ~Barbie2(){
     /*cout << "Barbie destructor"<<endl;*/
 }
 
-int Barbie :: geValId(){
+int Barbie2 :: geValId(){
     return valId;
 }
 
-void Barbie :: getAccessories(){
+void Barbie2 :: getAccessories(){
     cout << "Accessories: glasses, gloves, shoes" << endl;
 }
 
@@ -36,6 +36,6 @@ void Barbie :: getAccessories(){
 //     Toy :: displayInfo();
 //     getAccessories();
 // }
-void Barbie :: changeID(int newID){
+void Barbie2 :: changeID(int newID){
     id += newID;
 }

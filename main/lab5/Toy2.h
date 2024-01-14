@@ -1,20 +1,20 @@
-#ifndef TOY_H
-#define TOY_H
+#ifndef TOY2_H
+#define TOY2_H
 #include<iostream>
 #include<string>
 #include<iomanip>
 
 using namespace std;
 
-class Toy{
+class Toy2{
     string name;
     double price;
     int ageRestriction;
     int count;
     public:
-    Toy();
-    Toy(string name, double price, int agerestriction);
-    ~Toy();
+    Toy2();
+    Toy2(string name, double price, int agerestriction);
+    ~Toy2();
     string getName();
     void setName(string name);
     double getPrice();
@@ -25,8 +25,8 @@ class Toy{
     void setCount(int count);
 
     virtual void displayInfo();
-    friend ostream& operator<<(ostream& os, const Toy* toy);
-    friend istream& operator>>(istream& is, Toy* toy);
+    friend ostream& operator<<(ostream& os, const Toy2* toy);
+    friend istream& operator>>(istream& is, Toy2* toy);
 
 };
 

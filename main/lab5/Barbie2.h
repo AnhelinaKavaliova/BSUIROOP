@@ -1,20 +1,20 @@
-#ifndef BARBIE_H
-#define BARBIE_H
-#include"Doll.h"
+#ifndef BARBIE2_H
+#define BARBIE2_H
+#include "Doll2.h"
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-class Barbie : public Doll{
+class Barbie2 : public Doll2{
     //int count;
     public:
     static int id;
     int valId;
-    Barbie();
-    Barbie(int count);
+    Barbie2();
+    Barbie2(int count);
     int geValId();
-    ~Barbie();
+    ~Barbie2();
     void getAccessories();
     //void displayInfo();
     void changeID(int newID);

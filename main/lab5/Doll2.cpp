@@ -1,17 +1,17 @@
-#include"Doll.h"
+#include "Doll2.h"
 
 using namespace std;
 
 
-Doll :: Doll(){ /*cout <<"Doll constructor"<<endl;*/}
-Doll :: ~Doll(){/*cout << "Doll destructor" <<endl;*/}
-void Doll :: setCanSpeak(bool canSpeak){
+Doll2 :: Doll2(){ /*cout <<"Doll constructor"<<endl;*/}
+Doll2 :: ~Doll2(){/*cout << "Doll destructor" <<endl;*/}
+void Doll2 :: setCanSpeak(bool canSpeak){
     this->canSpeak = canSpeak;
 }
-bool Doll :: getCanSpeak(){
+bool Doll2 :: getCanSpeak(){
     return canSpeak;
 }
-void Doll :: sayHello(){
+void Doll2 :: sayHello(){
     try{
         if(canSpeak) cout <<"Hi!"<<endl;
         else throw "The doll can't speak";
@@ -23,7 +23,7 @@ void Doll :: sayHello(){
     
 }
 
-void Doll :: displayInfo() {
-   Toy :: displayInfo();
+void Doll2 :: displayInfo() {
+   Toy2 :: displayInfo();
    getAccessories();
 }

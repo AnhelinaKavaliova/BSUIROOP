@@ -1,38 +1,38 @@
-#include "ToyStore.h"
+#include "ToyStore2.h"
 #include<ctime>
 
 using namespace std;
 
 
-int ToyStore :: numbOrder = 0;
+int ToyStore2 :: numbOrder = 0;
 
-ToyStore :: ToyStore(){
+ToyStore2 :: ToyStore2(){
     try {
-        order[0] = new BoardGame();
-        order[1] = new Car();
-        order[2] = new Barbie();
-        order[3] = new TalkingDoll();
+        order[0] = new BoardGame2();
+        order[1] = new Car2();
+        order[2] = new Barbie2();
+        order[3] = new TalkingDoll2();
     } 
     catch (const exception& e) {
         cout<< "Memory allocation failed: " << e.what() << endl;
     }
     randomSetIsOpen();
 }
-ToyStore ::~ToyStore(){}
-void ToyStore :: randomSetIsOpen(){
+ToyStore2 ::~ToyStore2(){}
+void ToyStore2 :: randomSetIsOpen(){
     srand(time(NULL));
     isOpen = rand()%2;
 }
-bool ToyStore :: getIsOpen(){
+bool ToyStore2 :: getIsOpen(){
     return isOpen;
 }
-void ToyStore :: open(){
+void ToyStore2 :: open(){
     isOpen = 1;
 }
-void ToyStore :: close(){
+void ToyStore2 :: close(){
     isOpen = 0;
 }
-void ToyStore :: orderInfo(){
+void ToyStore2 :: orderInfo(){
     ifstream inpF;
     string str;
     inpF.open("order.txt");
@@ -49,7 +49,7 @@ void ToyStore :: orderInfo(){
     
 }
 
-void ToyStore :: catalog(){
+void ToyStore2 :: catalog(){
     ofstream outF;
     outF.open("catalog.txt", ios::trunc);
     if(!outF.is_open()){
@@ -58,10 +58,10 @@ void ToyStore :: catalog(){
     } 
     outF << "Catalog:" << endl;
     outF << setw(17) << "Name" << setw(10) << "Count" << endl;
-    outF<<"1." << setw(15) <<"Board games"<<setw(10)<< BoardGame :: id <<endl;
-    outF<<"2." << setw(15) <<"Cars"<<setw(10)<< Car :: id <<endl;
-    outF<<"3." << setw(15) <<"Barbie"<<setw(10)<< Barbie :: id <<endl;
-    outF<<"4." << setw(15) <<"Talking doll"<<setw(10)<< TalkingDoll :: id <<endl;
+    outF<<"1." << setw(15) <<"Board games"<<setw(10)<< BoardGame2 :: id <<endl;
+    outF<<"2." << setw(15) <<"Cars"<<setw(10)<< Car2 :: id <<endl;
+    outF<<"3." << setw(15) <<"Barbie"<<setw(10)<< Barbie2 :: id <<endl;
+    outF<<"4." << setw(15) <<"Talking doll"<<setw(10)<< TalkingDoll2 :: id <<endl;
     
     outF.close();
 
@@ -79,11 +79,11 @@ void ToyStore :: catalog(){
     inpF.close();
 }
 
-Toy ToyStore :: getOrder(){
+Toy2 ToyStore2 :: getOrder(){
 
 }
 
-void ToyStore :: setOrder(Toy &toy, int i){
+void ToyStore2 :: setOrder(Toy2 &toy, int i){
     if(order[i]->getCount() == 0){
         *order[i] = toy;
     }else order[i]->setCount(toy.getCount());
@@ -107,7 +107,7 @@ void ToyStore :: setOrder(Toy &toy, int i){
 
 }
 
-void ToyStore :: deleteOrder(string orderName){
+void ToyStore2 :: deleteOrder(string orderName){
     for(int i = 0; i < 4; i++){
         if(order[i]->getName() == orderName){
             int check = -(order[i]->getCount());
@@ -116,16 +116,16 @@ void ToyStore :: deleteOrder(string orderName){
             switch (i)
             {
             case 0:
-                BoardGame :: id -=check;
+                BoardGame2 :: id -=check;
                 break;
             case 1:
-                Car :: id -=check;
+                Car2 :: id -=check;
                 break;
             case 2:
-                Barbie :: id -=check;
+                Barbie2 :: id -=check;
                 break;
             case 3:
-                TalkingDoll :: id -=check;
+                TalkingDoll2 :: id -=check;
                 break;
             default:
                 break;
@@ -150,14 +150,14 @@ void ToyStore :: deleteOrder(string orderName){
     outF.close();
 }
 
-void ToyStore :: searchToy(){
+void ToyStore2 :: searchToy(){
     fstream file;
     file.open("order.bin", ios::trunc | ios::out | ios::binary);
-    Toy serchinToy;
+    Toy2 serchinToy;
     for(int i = 0; i < 4; i++){
         if(order[i]->getCount() != 0){
             serchinToy = *order[i];
-           file.write(reinterpret_cast<char*>(&serchinToy), sizeof(Toy));
+           file.write(reinterpret_cast<char*>(&serchinToy), sizeof(Toy2));
         }
     }
     file.close();
@@ -166,20 +166,20 @@ void ToyStore :: searchToy(){
     infile.open("order.bin", ios::in | ios::binary);
     infile.seekg(0, ios::end);
     int endposition = infile.tellg();
-    int n = endposition / sizeof(Toy);
+    int n = endposition / sizeof(Toy2);
     cout << "The count of toys: " << n << endl;
     cout << "Enter the toy number: ";
     cin >> n;
-    int position = (n - 1) * sizeof(Toy);
+    int position = (n - 1) * sizeof(Toy2);
     infile.seekg(position);
     infile.read(reinterpret_cast<char*>(&serchinToy), sizeof(serchinToy));
     serchinToy.displayInfo();
     infile.close();
 }
 
-int ToyStore :: getNumbOrder(){
+int ToyStore2 :: getNumbOrder(){
     return numbOrder;
 }
-void ToyStore :: incrNumbOrder(){
+void ToyStore2 :: incrNumbOrder(){
     numbOrder++;
 }
